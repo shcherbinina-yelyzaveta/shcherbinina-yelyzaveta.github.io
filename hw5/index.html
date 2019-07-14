@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="calculator.js"></script>
+</head>
+<body class="container">
+<div class="row justify-content-md-center mt-3">
+    <div data-component="tip-calc" class="card col-lg-6 noPad">
+        <h2>Tip Calculator</h2>
+        <div class="card-body">
+            <form data-selector="form">
+                <label for="bill">Bill Amount</label>
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend"><label class="input-group-text" for="bill">$</label></div>
+                    <input type="number" class="form-control" id="bill" autocomplete="off" placeholder="your bill amount" value="100" step="1" data-component="bill">
+                </div>
+
+                <label class="mt-3" for="tip">Tip</label>
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend"><label class="input-group-text" for="tip">%</label></div>
+                    <input type="number" class="form-control" id="tip" autocomplete="off" placeholder="Tips Percentage" value="15" data-component="tip">
+                </div>
+                <br>
+                <div class="funkyradio-default">
+                    <input type="checkbox" name="checkbox" id="split-checkbox" data-component="split-checkbox"/>
+                    <label for="split-checkbox">Split Bill</label>
+                </div>
+                <div class="form-group" hidden="true">
+                    <label for="between-amount">Between</label>
+                    <input type="number" class="form-control" id="between-amount" placeholder="between" value="2" min="2" step="1" data-component="between-amount">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="results" class="row justify-content-md-center mt-3">
+    <div class="card col-lg-6 noPad">
+        <h2>Result</h2>
+        <div class="card-body">
+            <label class="mt-3" for="result">Tip Amount</label>
+            <div class="input-group flex-nowrap">
+                <div class="input-group-prepend"><label class="input-group-text" for="result">$</label></div>
+                <input type="number" class="form-control" id="result" readonly  data-component="result">
+            </div>
+
+            <label class="mt-3" for="total">Total Price</label>
+            <div class="input-group flex-nowrap">
+                <div class="input-group-prepend"><label class="input-group-text" for="result">$</label></div>
+                <input type="number" class="form-control" id="total" readonly data-component="total">
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="resultPersonBlock" class="row justify-content-md-center mt-3" hidden="true" data-component="resultPersonBlock">
+    <div class="card col-lg-6 noPad hidden" id="eachSection">
+        <h2>Per Person</h2>
+        <div class="card-body">
+
+            <label for="resultPerson">Tip Amount</label>
+            <div class="input-group flex-nowrap">
+                <div class="input-group-prepend"><label class="input-group-text" for="resultPerson">$</label></div>
+                <input type="number" class="form-control" id="resultPerson" readonly data-component="resultPerson">
+            </div>
+
+            <label class="mt-3" for="totalPerson">Total Price</label>
+            <div class="input-group flex-nowrap">
+                <div class="input-group-prepend"><label class="input-group-text" for="totalPerson">$</label></div>
+                <input type="number" class="form-control" id="totalPerson" readonly data-component="totalPerson">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
